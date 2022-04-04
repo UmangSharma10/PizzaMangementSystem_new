@@ -6,21 +6,23 @@ import java.util.HashMap;
 
 public class DAO {
     HashMap<String , Pizza> hashMap = new HashMap<>();
+    Pizza pizza = new Pizza();
     public void create(String id , Pizza create){
         hashMap.put(id, create);
 
     }
-    public void delete(){
-
+    public void delete(String id){
+        hashMap.remove(id);
     }
 
-    public HashMap<String, Pizza> update(){
+    public void update(String id, Pizza update){
+        hashMap.put(id, update);
 
-        return hashMap;
     }
 
     public HashMap<String, Pizza> readAll(){
-        return hashMap;
+        HashMap<String, Pizza> tempHash = new HashMap<>(hashMap);
+        return tempHash;
 
     }
 }

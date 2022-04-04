@@ -5,7 +5,7 @@ import repo.DAO;
 
 import java.util.HashMap;
 
-public class Service {
+public class ServicePizza {
     DAO dao = new DAO();
     public void createPizza(String id, Pizza create){
 
@@ -18,7 +18,11 @@ public class Service {
 
     }
 
-    public HashMap<String, Pizza> updatePizza(){
-        return dao.update();
+    public void updatePizza(String id, Pizza pizza){
+        dao.update(id, pizza);
+    }
+
+    public void deleteById(String id){
+        dao.delete(id);
     }
 }
